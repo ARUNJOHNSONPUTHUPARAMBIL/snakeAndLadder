@@ -1,6 +1,9 @@
 package com.ajorgs.snakeandladder.model;
 
+import java.util.Arrays;
+
 public class Board {
+	private Cell cells[] = new Cell[100];
 
 	public Board()
 	{
@@ -10,7 +13,6 @@ public class Board {
 			cells[i].setNumber(i+1);
 		}
 	}
-	private Cell cells[] = new Cell[100];
 
 	public Cell[] getCells() {
 		return cells;
@@ -18,6 +20,11 @@ public class Board {
 
 	public void setCells(Cell[] cells) {
 		this.cells = cells;
+	}
+
+	@Override
+	public String toString() {
+		return "Board [cells=" + Arrays.toString(cells) + "]";
 	}
 
 }

@@ -16,7 +16,7 @@ public class Cell {
 
 	@Override
 	public String toString() {
-		return "Cell [number=" + number + ", snakes=" + snake + ", ladders=" + ladder + "]";
+		return "Cell [" + number + "," + snake + "," + ladder + "]\n";
 	}
 
 	public Snake getSnakes() {

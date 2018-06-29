@@ -2,28 +2,34 @@ package com.ajorgs.snakeandladder.model;
 
 public class Ladder {
 
-	private int startingPossition;
-	private int endingPossition;
+	private int head;
+	private int tail;
 
-	public int getStartingPossition() {
-		return startingPossition;
+	public Ladder(int head, int tail) {
+		this.head = head;
+		this.tail = tail;
+
 	}
 
-	public void setStartingPossition(int startingPossition) {
-		this.startingPossition = startingPossition;
+	public int gethead() {
+		return head;
 	}
 
-	public int getEndingPossition() {
-		return endingPossition;
+	public void sethead(int head) {
+		this.head = head;
 	}
 
-	public void setEndingPossition(int endingPossition) {
-		this.endingPossition = endingPossition;
+	public int gettail() {
+		return tail;
+	}
+
+	public void settail(int tail) {
+		this.tail = tail;
 	}
 
 	@Override
 	public String toString() {
-		return "Ladder [startingPossition=" + startingPossition + ", endingPossition=" + endingPossition + "]";
+		return "Ladder [head=" + head + ", tail=" + tail + "]\n";
 	}
 
 }
