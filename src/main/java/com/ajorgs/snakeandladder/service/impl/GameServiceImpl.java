@@ -94,10 +94,5 @@ public class GameServiceImpl implements GameService {
 		return ladderList;
 	}
 
-	@Override
-	public List<Player> createPlayers(String[] names) {
-
-		return null;
-	}
-
+	
 }

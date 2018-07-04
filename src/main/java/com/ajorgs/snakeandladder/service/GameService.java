@@ -10,6 +10,5 @@ public interface GameService {
 
 	public Board setGame();
 
-	public List<Player> createPlayers(String[] names);
 
 }

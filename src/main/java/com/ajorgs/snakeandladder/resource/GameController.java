@@ -24,10 +24,5 @@ public class GameController {
 		return service.setGame();
 	}
 	
-	@GetMapping("/players")
-	public List<Player> createPlayers(String[] names)
-	{
-		return service.createPlayers(names);
-	}
-
+	
 }
