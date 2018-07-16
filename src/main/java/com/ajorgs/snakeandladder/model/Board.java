@@ -17,19 +17,13 @@ import javax.persistence.OneToOne;
 public class Board {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
 	private Long id;
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="board", cascade = CascadeType.ALL)
 	private List<Cell> cells = new ArrayList<>();
 
 	public Board() {
-		for (int i=0;i<100;i++) {
-			cells.add(new Cell());
-		}
+		this.cells=new ArrayList<>();
 	}
-
-
-
 
 	public Long getId() {
 		return id;
@@ -39,22 +33,13 @@ public class Board {
 		this.id = id;
 	}
 
-
-
-
 	public List<Cell> getCells() {
 		return cells;
 	}
 
-
-
-
 	public void setCells(List<Cell> cells) {
 		this.cells = cells;
 	}
-
-
-
 
 	@Override
 	public String toString() {

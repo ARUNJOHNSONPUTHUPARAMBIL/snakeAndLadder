@@ -14,6 +14,9 @@ public class Ladder {
 	private int head;
 	private int tail;
 
+	public Ladder() {
+	}
+
 	public Ladder(int head, int tail) {
 		this.head = head;
 		this.tail = tail;
@@ -49,5 +52,4 @@ public class Ladder {
 		return "Ladder [id=" + id + ", head=" + head + ", tail=" + tail + "]";
 	}
 
-	
 }

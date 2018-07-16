@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ajorgs.snakeandladder.model.Board;
+import com.ajorgs.snakeandladder.model.Cell;
 import com.ajorgs.snakeandladder.model.Ladder;
 import com.ajorgs.snakeandladder.model.Snake;
 import com.ajorgs.snakeandladder.repository.BoardRepository;
@@ -19,6 +20,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public Board createBoard(List<Snake> snakes, List<Ladder> ladders) {
 		Board board = new Board();
+		for (int i = 0; i < 100; i++) {
+			Cell newCell = new Cell();
+			newCell.setNumber(i + 1);
+			board.getCells().add(newCell);
+		}
 		for (Snake snake : snakes) {
 			board.getCells().get(snake.getHead()).setSnakes(snake);
 
