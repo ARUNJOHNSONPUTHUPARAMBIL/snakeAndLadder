@@ -10,4 +10,6 @@ public interface BoardService {
 
 	public Board createBoard(List<Snake> snakes, List<Ladder> ladders);
 
+	public String exit();
+
 }

@@ -1,7 +1,16 @@
 package com.ajorgs.snakeandladder.model;
 
-public class Ladder {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Ladder {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+
+	private Long id;
 	private int head;
 	private int tail;
 
@@ -11,25 +20,34 @@ public class Ladder {
 
 	}
 
-	public int gethead() {
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getHead() {
 		return head;
 	}
 
-	public void sethead(int head) {
+	public void setHead(int head) {
 		this.head = head;
 	}
 
-	public int gettail() {
+	public int getTail() {
 		return tail;
 	}
 
-	public void settail(int tail) {
+	public void setTail(int tail) {
 		this.tail = tail;
 	}
 
 	@Override
 	public String toString() {
-		return "Ladder [head=" + head + ", tail=" + tail + "]\n";
+		return "Ladder [id=" + id + ", head=" + head + ", tail=" + tail + "]";
 	}
 
+	
 }

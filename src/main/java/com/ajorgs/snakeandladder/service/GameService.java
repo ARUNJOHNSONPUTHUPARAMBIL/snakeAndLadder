@@ -10,5 +10,7 @@ public interface GameService {
 
 	public Board setGame();
 
+	public String exit();
+
 
 }
