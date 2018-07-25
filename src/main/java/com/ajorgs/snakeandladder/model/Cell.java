@@ -11,25 +11,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
-
 @Entity
 public class Cell {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private int number;
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Snake snake;
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval=true)
 	private Ladder ladder;
 	@OneToOne(cascade = CascadeType.ALL)
 	Player player;
-	@ManyToOne(cascade = CascadeType.ALL)
-	Board board;
-	
-	public Cell() {
-	}
 
 	public int getNumber() {
 		return number;
@@ -42,23 +36,7 @@ public class Cell {
 	@Override
 	public String toString() {
 		return "Cell [id=" + id + ", number=" + number + ", snake=" + snake + ", ladder=" + ladder + ", player="
-				+ player + ", board=" + board + "]";
-	}
-
-	public Snake getSnakes() {
-		return snake;
-	}
-
-	public void setSnakes(Snake snake) {
-		this.snake = snake;
-	}
-
-	public Ladder getLadders() {
-		return ladder;
-	}
-
-	public void setLadders(Ladder ladder) {
-		this.ladder = ladder;
+				+ player + " \n ]";
 	}
 
 	public Long getId() {
@@ -91,14 +69,6 @@ public class Cell {
 
 	public void setPlayer(Player player) {
 		this.player = player;
-	}
-
-	public Board getBoard() {
-		return board;
-	}
-
-	public void setBoard(Board board) {
-		this.board = board;
 	}
 
 }

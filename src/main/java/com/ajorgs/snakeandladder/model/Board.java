@@ -18,11 +18,11 @@ public class Board {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@OneToMany(mappedBy="board", cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 	private List<Cell> cells = new ArrayList<>();
 
 	public Board() {
-		this.cells=new ArrayList<>();
+		this.cells = new ArrayList<>();
 	}
 
 	public Long getId() {
@@ -43,7 +43,7 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [id=" + id + ", cells=" + cells + "]";
+		return "Board [id=" + id + ", cells=" + cells + "\n ]";
 	}
 
 }

@@ -19,6 +19,7 @@ public class GameController {
 	{
 		return service.setGame();
 		
+		
 	}
 	
 	@GetMapping("/exit")

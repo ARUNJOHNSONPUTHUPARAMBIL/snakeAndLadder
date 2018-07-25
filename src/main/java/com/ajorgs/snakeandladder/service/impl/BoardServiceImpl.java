@@ -26,17 +26,18 @@ public class BoardServiceImpl implements BoardService {
 			board.getCells().add(newCell);
 		}
 		for (Snake snake : snakes) {
-			board.getCells().get(snake.getHead()).setSnakes(snake);
+			board.getCells().get(snake.getHead()).setSnake(snake);
 
 		}
 		for (Ladder ladder : ladders) {
-			board.getCells().get(ladder.getHead()).setLadders(ladder);
+			board.getCells().get(ladder.getHead()).setLadder(ladder);
 		}
 		Board save = boardRepo.save(board);
 
 		return save;
 	}
 
+	
 	@Override
 	public String exit() {
 		Board b = new Board();
